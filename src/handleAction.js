@@ -190,10 +190,9 @@ const checkPositional = (action, logParameter) => {
     // samurai rear/flank check
     resources.positionalActionCount++
 
-    const succeedCode = '11B'
-    const meikyoCode = 'F30F'
-    const slice = logParameter.slice(8, 22)
-    return slice.includes(succeedCode) || slice.includes(meikyoCode)
+    const succeedCode = '4871' // 48710003 48710103 48710203
+    // failedCode: 44710103 44710203
+    return logParameter[6].includes(succeedCode)
   }
   if (reaperPositionals.includes(action.actionID)) {
     // reaper rear/flank check
