@@ -32,26 +32,26 @@ const resources = {
 
 // job specific values
 const monkPositionals = [
-  53, // 連撃
-  56, // 崩拳
-  54, // 正拳突き
-  74, // 双竜脚
-  61, // 双掌打
-  66, // 破砕拳
+  56, // 崩拳 Snap Punch
+  66, // 破砕拳 Demolish
 ]
 const dragoonPositionals = [
-  88,
-  79,
-  3554,
-  3556,
+  88, // Chaos Thrust
+  79, // Heavy Thrust
+  3554, // Fang and Claw
+  3556, // Wheeling Thrust
 ]
 const ninjaPositionals = [
-  2255, // 旋風刃
-  3563, // 強甲破点突
+  2255, // 旋風刃 Aeolian Edge
+  3563, // 強甲破点突 Armor Crush
 ]
 const samuraiPositionals = [
-  7481, // 月光 23D
-  7482, // 花車 43D
+  7481, // 月光 23D Gekko
+  7482, // 花車 43D Kasha
+]
+const reaperPositionals = [
+  24382, // Gibbet
+  24383, // Gallows
 ]
 
 export const cleanup = () => {
@@ -217,6 +217,11 @@ const checkPositional = (action, logParameter) => {
     }
     return false
   }
+  if (reaperPositionals.includes(action.actionID)) {
+    // reaper rear/flank check
+    resources.positionalActionCount++
+    return logParameter.slice(8, 22).includes('11B')
+  }
 
   return true
 }
@@ -338,7 +343,7 @@ export const handleAction = async (primaryCharacter, logCode, logTimestamp, logP
   }
 
   // check invalid actionID
-  if (actionID > 21000) {
+  if (actionID > 26000) {
     if (actionID > 0x4000000) {
       // mount icons: 59000 ~ 59399 (266 total)
       const mountID = action.actionID & 0xffffff
