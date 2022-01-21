@@ -1,0 +1,59 @@
+Jobs:
+
+- [ ] PLD
+- [ ] WAR
+- [ ] DRK
+- [ ] GNB
+
+- [ ] MNK
+- [ ] DRG
+- [ ] NIN
+- [ ] SAM
+- [ ] RPR
+
+- [X] WHM
+- [X] SCH
+- [ ] AST
+- [ ] SGE
+
+- [ ] BRD
+- [ ] MCH
+- [ ] DNC
+
+- [ ] BLM
+- [ ] SMN
+- [ ] RDM
+
+- [ ] BLU
+Jobs:
+
+- [ ] PLD
+- [ ] WAR
+- [ ] DRK
+- [ ] GNB
+
+- [ ] MNK
+- [ ] DRG
+- [ ] NIN
+- [ ] SAM
+- [ ] RPR
+
+- [X] WHM
+- [X] SCH
+- [ ] AST
+- [ ] SGE
+
+- [ ] BRD
+- [ ] MCH
+- [ ] DNC
+
+- [ ] BLM
+- [ ] SMN
+- [ ] RDM
+
+- [ ] BLU
+
+Fixes:
+
+- [ ] Only number for image and guess the rest (instead of full path)
+- [ ] Make the gcd border looks like in game skills
