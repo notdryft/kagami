@@ -191,7 +191,9 @@ const checkPositional = (action, logParameter) => {
     resources.positionalActionCount++
 
     const succeedCode = '11B'
-    return logParameter.slice(8, 22).includes(succeedCode)
+    const meikyoCode = 'F30F'
+    const slice = logParameter.slice(8, 22)
+    return slice.includes(succeedCode) || slice.includes(meikyoCode)
   }
   if (reaperPositionals.includes(action.actionID)) {
     // reaper rear/flank check
